@@ -1,11 +1,13 @@
 # pyTAgui
-/Users/damon/Desktop/BACKED_UP/Software/DamonWrittenSoftware/Transient_Absorption_Processing/python_qt_TA_data_processing_v0p5
+/Users/damon/Desktop/BACKED_UP/Software/DamonWrittenSoftware/Transient_Absorption_Processing/python_qt_TA_data_processing_GUI
 
 Installation
 
-1: Save the folder of python files to a directory on your computer at the base of your TA processing work
+0: Install python preferably via anaconda (e.g. miniconda) and conda install matplotlib, h5py, numpy, scipy
 
-2: Each time you open a new python instance (aka terminal): add the TA software folder pathname to PYTHONPATH, by opening a python instance and executing the following.
+1: Save this folder of python files to a directory where you often keep software
+
+2: Each time you start python, you need to add the TA software folder pathname to PYTHONPATH, by opening a python instance and executing the following.
 
     import sys
     import os
@@ -13,11 +15,11 @@ Installation
     directory_to_add = '/Users/damon/Desktop/BACKED_UP/Software/DamonWrittenSoftware/Transient_Absorption_Processing/python_qt_TA_data_processing_v0p5'
     sys.path.append(directory_to_add)
 
-3:  Change the working directory of your python terminal to the folder holding all your TA data files.
+3:  Change the working directory of your python terminal to the folder that has your TA data files.
     import os
     os.chdir('path/to/data/files')
 
-4: After doing step 3 you need to import the TA processing modules into the python instance.
+4: After doing step 3 you need to import the TA processing modules into your python instance.
     import os
     import sys
     import shared_supporting_functions as TA_sh             # abbreviation of TA_shared
