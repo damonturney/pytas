@@ -33,7 +33,7 @@
 
 
 
-# List of main functions:  
+# List of main functions
 1: shared_supporting_functions             usually abbreviated as TA_sh
 2: plot_TA_matrix                          usually abbreviated as TA_plt
 3: merge_TA_matrices                       usually abbreviated as TA_mrg
