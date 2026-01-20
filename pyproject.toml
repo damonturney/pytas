@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0", "setuptools-scm>=8.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "py-ta-gui"
+name = "pytagui"
 dynamic = ["version"]
 
 description = "A python, matplotlib, and QT based GUI for transient absorption processing."
@@ -14,4 +14,4 @@ authors = [{name = "damonturney", email = "damonturney@gmail.com"}]
 dependencies = ["numpy", "os", "time", "h5py", "scipy", "matplotlib", "PyQt5", "sys"]
 
 [tool.setuptools_scm]
-write_to = "src/py-ta-gui/_version.py"
+write_to = "src/pytagui/_version.py"
