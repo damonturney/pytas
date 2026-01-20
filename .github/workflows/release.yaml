@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: 
       name: pypi
-      url: https://pypi.org/p/py_ta_gui  # Replace with your PyPI package name
+      url: https://pypi.org/p/py-ta-gui  # Replace with your PyPI package name
     permissions:
       id-token: write  # IMPORTANT: Mandatory for trusted publishing
       contents: read

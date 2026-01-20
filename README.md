@@ -1,8 +1,8 @@
-# py_ta_gui
+# py-ta-gui
 A python, matplotlib, and QT based GUI for transient absorption processing.
 
 # Installation
-conda install -c conda-forge py_ta_gui
+conda install -c conda-forge py-ta-gui
 
 
 # List of main utilities
@@ -49,6 +49,6 @@ o Develop a SVD amd Global Analysis module
 # File Locations
 /...BACKED_UP/Software/...Transient_Absorption_Processing/python_qt_TA_data_processing_GUI
 
-https://github.com/damonturney/py_ta_gui
+https://github.com/damonturney/py-ta-gui
 
 
