@@ -11,7 +11,7 @@ readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
 authors = [{name = "damonturney", email = "damonturney@gmail.com"}]
-dependencies = ["numpy", "os", "time", "h5py", "scipy", "matplotlib", "PyQt5", "sys"]
+dependencies = ["numpy>=1.21.0","h5py>=3.1.0","scipy>=1.7.0","matplotlib>=3.5.0","PyQt5>=5.15.0"]
 
 [tool.setuptools_scm]
 write_to = "src/pytas/_version.py"
