@@ -5,10 +5,14 @@ Python for transient absorption spectroscopy: a suite of GUI tools based on matp
 # Installation
 Installation is provided by conda-forge <br>
 ```bash
+conda create --name new_env
+conda activate new_env
 conda install -c conda-forge pytas
 ```
 or<br>
 ```bash
+mamba create --name new_env
+mamba activate new_env
 mamba install -c conda-forge pytas
 ```
 
@@ -32,7 +36,6 @@ Presently just .h5 or .hdf5 or .hdf
 
 
 # Example Work Flows
-
 To run the GUI applications from a terminal shell:
 ```bash
 python -m pytas.TA_plot_matrix_GUI data.h5
