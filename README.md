@@ -27,7 +27,7 @@ list_hdf5_contents(HDF5_filename) <br>
 load_hdf5_data(filename,dataset_path_string) <br>
 
 
-# Input File Compatibility
+# Transient Absorption Data File Compatibility
 Presently just .h5 or .hdf5 or .hdf
 
 
