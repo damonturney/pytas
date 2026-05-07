@@ -3,6 +3,7 @@ Python for transient absorption spectroscopy: a suite of GUI tools based on matp
 
 
 # Installation
+Installation is provided by conda-forge <br>
 ```bash
 conda install -c conda-forge pytas
 ```
