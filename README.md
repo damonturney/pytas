@@ -32,7 +32,6 @@ Presently just .h5 or .hdf5 or .hdf
 
 
 # Example Work Flows
-# Example Work Flows
 
 To run the GUI applications from a terminal shell:
 ```bash
