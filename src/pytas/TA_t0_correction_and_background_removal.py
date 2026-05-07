@@ -32,12 +32,13 @@ from . import shared_functions_classes as TA_sh
 
 
 class TA_t0_correction_and_background_removal_GUI():   
-    def __init__(self, TA_matrix_input):
-        self.app = QApplication(sys.argv)                                           # Create the QApplication instance           
-        self.TA_matrix_input = TA_matrix_input
+    def __init__(self, TA_matrix_input):                             
+        if QApplication.instance() is None:                                         # Check if an instance of QApplication already exists
+            self.app = QApplication(sys.argv)                                       # Create the QApplication instance   
+        self.TA_matrix_input = TA_matrix_input                                      
         self.main_pyqt5_window = TA_t0_correction_and_background_removal_main_Window(self.TA_matrix_input)   # Create the main pyqt5 window
-        self.main_pyqt5_window.show()                                               # Display the window
-        sys.exit(self.app.exec())                                                   # Start the event loop        
+        self.main_pyqt5_window.show()                                               # Start the event loop
+        self.app.exec()                                                             # Only call exec() if we are in a standalone script context.  In a shell, the user might want to keep control
 
 
 
@@ -375,13 +376,14 @@ def handle_exception(exc_type, exc_value, exc_traceback):
 sys.excepthook = handle_exception
 
 
-# if __name__ == "__main__":       # This line is asking: "Is this file the one that started the process?"  We can have only one QApplication instance per process, so we need to ensure this is the main file.
-#     # Check if a filename was provided in the command line arguments
-#     if len(sys.argv) > 1:
-#         TA_matrix_input = sys.argv[1]
-#     else:
-#         # Fallback default if no file is provided
-#         TA_matrix_input = "HHHF_Zn_heme_ZnCl_p425nm_red_300uW.h5"  # default input for testing:
-#     # Start the application
-#     window = TA_t0_correction_and_background_removal_GUI(TA_matrix_input) #The QApplication instance must be created before this.  The init method recognizes QApplication already exists and uses it.
-    
+def main():                     #Function to be called only when this file is called from the linux bash command line
+    if len(sys.argv) > 1:
+        hdf5_file = sys.argv[1]
+    else:
+        print("Error: Please provide a filename.")
+        return 
+    window = TA_t0_correction_and_background_removal_GUI(hdf5_file)  # Launch the GUI
+
+if __name__ == "__main__":
+    main()  
+

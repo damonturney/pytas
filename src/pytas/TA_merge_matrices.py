@@ -31,11 +31,15 @@ from . import shared_functions_classes as TA_sh
 
 class TA_merge_matrix_GUI():   
     def __init__(self, TA_matrix_input_filenames):
-        self.app = QApplication(sys.argv)                                           # Create the QApplication instance           
-        self.TA_matrix_input_filenames = TA_matrix_input_filenames
+        if QApplication.instance() is None:                                         # Check if an instance of QApplication already exists
+            self.app = QApplication(sys.argv)                                       # Create the QApplication instance   
+        self.TA_matrix_input_filenames = TA_matrix_input_filenames                                      
         self.main_pyqt5_window = TA_merge_matrix_GUI_main_Window(self.TA_matrix_input_filenames)   # Create the main pyqt5 window
-        self.main_pyqt5_window.show()                                               # Display the window
-        sys.exit(self.app.exec())                                                   # Start the event loop        
+        self.main_pyqt5_window.show()                                               # Start the event loop
+        self.app.exec()                                                             # Only call exec() if we are in a standalone script context.  In a shell, the user might want to keep control
+
+
+
 
 
 
@@ -392,13 +396,13 @@ sys.excepthook = handle_exception
 
 
 
-# if __name__ == "__main__":       # This line is asking: "Is this file the one that started the process?"  We can have only one QApplication instance per process, so we need to ensure this is the main file.
-#     # Check if a filename was provided in the command line arguments
-#     if len(sys.argv) > 1:
-#         TA_matrix_input_filenames = sys.argv[1]
-#     else:
-#         # Fallback default if no file is provided
-#         TA_matrix_input_filenames = ['HHHF_Zn_heme_ZnCl_p425nm_blue_300uW.h5.t0_corr.csv','HHHF_Zn_heme_ZnCl_p425nm_red_300uW.h5.t0_corr.csv']  # default input for testing:
-#     # Start the application
-#     window = TA_merge_matrix_GUI(TA_matrix_input_filenames) #The QApplication instance must be created before this.  The init method recognizes QApplication already exists and uses it.
-    
+def main():                     #Function to be called only when this file is called from the linux bash command line
+    if len(sys.argv) > 1:
+        hdf5_file = sys.argv[1]
+    else:
+        print("Error: Please provide a filename.")
+        return 
+    window = TA_merge_matrix_GUI(hdf5_file)  # Launch the GUI
+
+if __name__ == "__main__":
+    main()      
